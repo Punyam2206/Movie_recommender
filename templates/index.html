@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CineMatch · Movie Recommender</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="logo">🎬</div>
+      <h1>CineMatch</h1>
+      <p class="sub">Pick a movie you love and discover five more you'll enjoy.</p>
+    </header>
+
+    <section class="search">
+      <div class="input-wrap">
+        <input id="movie-input" type="text" placeholder="Search a movie, e.g. Avatar"
+               autocomplete="off" spellcheck="false" />
+        <button id="go-btn" type="button">Recommend</button>
+        <ul id="suggestions" class="suggestions" hidden></ul>
+      </div>
+      <div id="error" class="error" hidden></div>
+    </section>
+
+    <section id="loading" class="loading" hidden>
+      <div class="spinner"></div><span>Finding similar movies…</span>
+    </section>
+
+    <section id="results" hidden>
+      <h2>Because you liked <span id="query-title"></span></h2>
+      <div id="cards" class="cards"></div>
+    </section>
+  </main>
+
+  <footer>Content-based recommendations · Flask + scikit-learn</footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
